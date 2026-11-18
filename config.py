@@ -3,13 +3,16 @@ from os import getenv
 
 
 # ------------------------------------------------
-API_ID = int(os.environ.get("API_ID", "21157244"))
+API_ID = int(os.environ.get("API_ID", "31585648"))
 # ------------------------------------------------
-API_HASH = os.environ.get("API_HASH","4981c2699bd91c7db836ec8f77e5b0f0")
+API_HASH = os.environ.get("API_HASH","269cc74123189f7bfcd9a6848380cd63
+
+
+                          ")
 # ------------------------------------------------
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+BOT_TOKEN = os.environ.get("8994641116:AAE3oJJgPKBWxbYIdMw8Sx7E_n5sFm21x_Q", "")
 # ------------------------------------------------
-BOT_USERNAME = os.environ.get("BOT_USERNAME", "@Gajjubhaikaext_bot")
+BOT_USERNAME = os.environ.get("Transferoriginalfile_bot", "@Gajjubhaikaext_bot")
 BOT_TEXT = "GAJJU BHAI KA EXTRACTOR"
 # ------------------------------------------------
 OWNER_ID = int(os.environ.get("OWNER_ID", "1783306092"))
