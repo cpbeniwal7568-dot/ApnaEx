@@ -1,54 +1,27 @@
+"""
+ApnaEx Free Bot - configuration template
+
+Keep all secrets in your hosting provider's Environment Variables.
+Do NOT commit real tokens, API hashes, passwords, or MongoDB URLs to GitHub.
+"""
+
 import os
-from os import getenv
 
+# Telegram API credentials (set these as environment variables)
+API_ID = int(os.getenv("31585648", "0"))
+API_HASH = os.getenv("269cc74123189f7bfcd9a6848380cd63", "")
+BOT_TOKEN = os.getenv("8994641116:AAE3oJJgPKBWxbYIdMw8Sx7E_n5sFm21x_Q", "")
 
-# ------------------------------------------------
-API_ID = int(os.environ.get("API_ID", "31585648"))
-# ------------------------------------------------
-API_HASH = os.environ.get("API_HASH","269cc74123189f7bfcd9a6848380cd63
+# Bot identity
+BOT_USERNAME = "Transferoriginalfile_bot"
 
+# Owner and channel
+OWNER_ID = 8761631426
+CHANNEL_ID = -1003872490386
 
-                          ")
-# ------------------------------------------------
-BOT_TOKEN = os.environ.get("8994641116:AAE3oJJgPKBWxbYIdMw8Sx7E_n5sFm21x_Q", "")
-# ------------------------------------------------
-BOT_USERNAME = os.environ.get("Transferoriginalfile_bot", "@Gajjubhaikaext_bot")
-BOT_TEXT = "GAJJU BHAI KA EXTRACTOR"
-# ------------------------------------------------
-OWNER_ID = int(os.environ.get("OWNER_ID", "1783306092"))
-# ------------------------------------------------
-# //LOG CHANNEL ID 
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002195125473"))
+# MongoDB connection (set the COMPLETE URI as MONGO_URL in hosting)
+MONGO_URL = os.getenv("mongodb+srv://cpbeniwal7568_db_user:YOUR_NEW_PASSWORD@cluster0.c2fwzua.mongodb.net/ApnaEx?compressors=zlib", "")
 
-# //FORCE_CHANNEL_ID
-CHANNEL_ID2 = int(os.environ.get("CHANNEL_ID2", "-1002195125473")) 
-# ------------------------------------------------
-MONGO_URL = os.environ.get("MONGO_URL", "mongodb+srv://besib69802:YMOfgvnyjbRgW5qt@cluster0.yzzu2gn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-# -----------------------------------------------
-PREMIUM_LOGS = int(os.environ.get("PREMIUM_LOGS", "-1002195125473"))
-# -----------------------------------------------
-join = '<a href="https://t.me/RPSC_UPSC_CURRENT">✳️ JOIN BACKUP</a>'
-# -----------------------------------------------
-UNSPLASH_ACCESS_KEY = 'RabDRmuXXBobanmwwbvpP5LwoG4J8ox34y5Sstz-9jk'
-# -----------------------------------------------
-UNSPLASH_QUERY = 'animal baby'
-# -----------------------------------------------
-ADMIN_BOT_USERNAME = "Mirza_Ghallib" #without @
-
-THUMB_URL = os.environ.get("THUMB_URL", "https://josephscollege.ac.in/wp-content/uploads/2022/04/1.jpg")
-
-
-
-
-# # Bot configuration
-# API_ID = int(os.environ.get("API_ID", "21157244"))
-# API_HASH = os.environ.get("API_HASH", "4981c2699bd91c7db836ec8f77e5b0f0")
-# BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
-# BOT_USERNAME = os.environ.get("BOT_USERNAME", "Gajjubhaikaext_bot")
-# OWNER_ID = int(os.environ.get("OWNER_ID", "1783306092"))
-# SUDO_USERS = list(map(int, getenv("SUDO_USERS", "1783306092").split()))
-# CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002195125473"))
-# MONGO_URL = os.environ.get("MONGO_URL", "mongodb+srv://wadiro6523:08AwfhhKRdQaS1i6@cluster0.krzxuop.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-# PREMIUM_LOGS = int(os.environ.get("PREMIUM_LOGS", "-1002195125473"))
-# THUMB_URL = os.environ.get("THUMB_URL", "https://i.fbcd.co/products/original/ug-circle-logo-design-2-e84695ca2ab9a697d2b2d7c928b0bf5f12bf18e076da241815e0372c8d617915.jpg")
-
+# Optional features
+# This project is intended to run without Premium or thumbnail features.
+# Remove any corresponding imports/references in the bot's other files too.
