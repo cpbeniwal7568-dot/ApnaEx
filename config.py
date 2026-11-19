@@ -1,15 +1,10 @@
 """
 ApnaEx Bot configuration
-Style: simple centralized settings, inspired by the public ApnaEx config layout.
-Keep secrets in hosting Environment Variables or a private .env file.
-NEVER commit your real BOT_TOKEN, API_HASH, or MONGO_URL to public GitHub.
 """
 
 import os
 from dotenv import load_dotenv
 
-# Load local .env when running on your own computer.
-# On hosting, add these values in the Environment Variables section.
 load_dotenv()
 
 # Telegram credentials
@@ -22,29 +17,24 @@ BOT_USERNAME = os.getenv("BOT_USERNAME", "@Transferoriginalfile_bot")
 BOT_TEXT = os.getenv("BOT_TEXT", "APNAEX FILE TRANSFER BOT")
 OWNER_ID = int(os.getenv("OWNER_ID", "8761631426"))
 
-# Private Telegram channel where uploaded files are stored.
-# Use the channel ID beginning with -100.
+# Private Telegram channel
 STORAGE_CHANNEL_ID = int(os.getenv("STORAGE_CHANNEL_ID", "-1003872490386"))
-
-# Compatibility aliases for projects/config layouts using CHANNEL_ID.
 CHANNEL_ID = STORAGE_CHANNEL_ID
 CHANNEL_ID2 = int(os.getenv("CHANNEL_ID2", "0"))
 
-# MongoDB
+# MongoDB (YAHAN APNA ASLI PASSWORD DAALEIN)
 MONGO_URL = os.getenv(
-    "MONGO_URL",
-    "mongodb+srv://cpbeniwal7568_db_user:<db_password>@cluster0.c2fwzua.mongodb.net/"
+    "MONGO_URL",
+    "mongodb+srv://cpbeniwal7568_db_user:cpbeniwal756888_db_user@cluster0.c2fwzua.mongodb.net/"
 )
 DATABASE_NAME = os.getenv("DATABASE_NAME", "apnaex")
 
-# Optional admin IDs separated by spaces, e.g. "123456 987654"
 SUDO_USERS = [
     int(user_id)
     for user_id in os.getenv("SUDO_USERS", "").split()
     if user_id.isdigit()
 ]
 
-# Optional text settings
 START_MESSAGE = os.getenv(
     "START_MESSAGE",
     "Welcome to ApnaEx! Send me a file to store and get a retrieval code."
@@ -54,9 +44,7 @@ HELP_MESSAGE = os.getenv(
     "Send a file to save it. Use /get CODE to retrieve a saved file."
 )
 
-
 def validate_config():
-    """Check required settings before the bot starts."""
     missing = []
 
     if API_ID <= 0:
@@ -68,22 +56,14 @@ def validate_config():
     if OWNER_ID <= 0:
         missing.append("OWNER_ID")
     if STORAGE_CHANNEL_ID >= 0:
-        missing.append("STORAGE_CHANNEL_ID (must be a negative channel ID, usually starts with -100)")
+        missing.append("STORAGE_CHANNEL_ID (must be a negative channel ID)")
     if not MONGO_URL:
         missing.append("MONGO_URL")
 
     if missing:
         raise RuntimeError(
             "Missing/invalid configuration: " + ", ".join(missing)
-            + ". Add these values in your hosting Environment Variables."
         )
-
 
 if __name__ == "__main__":
     print("ApnaEx config.py loaded.")
-    print("API_ID set:", API_ID > 0)
-    print("API_HASH set:", bool(API_HASH))
-    print("BOT_TOKEN set:", bool(BOT_TOKEN))
-    print("OWNER_ID set:", OWNER_ID > 0)
-    print("STORAGE_CHANNEL_ID set:", STORAGE_CHANNEL_ID < 0)
-    print("MONGO_URL set:", bool(MONGO_URL))
