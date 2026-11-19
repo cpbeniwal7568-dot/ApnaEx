@@ -23,8 +23,7 @@ CHANNEL_ID = STORAGE_CHANNEL_ID
 CHANNEL_ID2 = int(os.getenv("CHANNEL_ID2", "0"))
 
 # MongoDB (YAHAN APNA ASLI PASSWORD DAALEIN)
-MONGO_URL = os.getenv(
-    "MONGO_URL","")
+MONGO_URL = os.getenv("MONGO_URL", "")
 DATABASE_NAME = os.getenv("DATABASE_NAME", "apnaex")
 
 SUDO_USERS = [
